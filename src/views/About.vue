@@ -7,29 +7,29 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from "vuex";
+import { mapGetters, mapActions } from 'vuex';
 
 export default {
-  name: "About",
+  name: 'About',
   components: {},
   computed: {
-    ...mapGetters("rate", {
-      jpyRate: "getJpyRate",
-      btcRate: "getBtcRate"
-    })
+    ...mapGetters('rate', {
+      jpyRate: 'getJpyRate',
+      btcRate: 'getBtcRate',
+    }),
   },
   methods: {
-    ...mapActions("rate", {
-      infiniteRate: "infiniteRate",
-      stopIntervalHandler: "stopIntervalHandler"
+    ...mapActions('rate', {
+      infiniteRate: 'infiniteRate',
+      stopIntervalHandler: 'stopIntervalHandler',
     }),
     startRateInterval() {
       this.infiniteRate({ vm: this });
-    }
+    },
   },
   created() {
-    console.log("created");
+    console.log('created');
     // this.startRateInterval();
-  }
+  },
 };
 </script>

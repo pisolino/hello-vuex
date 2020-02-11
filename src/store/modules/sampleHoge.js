@@ -1,23 +1,23 @@
 const state = {
-  name: "this is hoge."
+  name: 'this is hoge.',
 };
 
 const getters = {
   getHoge(hoge) {
     return hoge.name;
-  }
+  },
 };
 
 const mutations = {
   hoge(state, payload) {
     state.name = payload;
-  }
+  },
 };
 
 const actions = {
   setHoge(context, { name }) {
-    context.commit("hoge", name);
-  }
+    context.commit('hoge', name);
+  },
 };
 
 export default {
@@ -25,5 +25,5 @@ export default {
   state,
   mutations,
   getters,
-  actions
+  actions,
 };
