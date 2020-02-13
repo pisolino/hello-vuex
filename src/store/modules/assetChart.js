@@ -85,4 +85,34 @@ export default {
   mutations,
   getters,
   actions,
+  modules: {
+    yearAssetChart: {
+      state: {
+        chartData: [],
+        scale: '1Y',
+      },
+      getters: {
+        yearChartData(state) {
+          return state.chartData;
+        },
+        yearScale(state) {
+          return state.scale;
+        },
+      },
+      mutations: {
+        yearChartData(state, payload) {
+          state.chartData = payload;
+        },
+      },
+      actions: {
+        async fetchYearChartData(context) {
+          console.log(context);
+          // const data = await getChart(scale);
+          // console.log(data);
+          // if (!data) return;
+          // this.dispatch({ type: 'assetChart/setChartData', chartData: data });
+        },
+      },
+    },
+  },
 };

@@ -73,8 +73,10 @@ export default {
     this.fetchRate({ vm: this });
   },
   mounted() {
-    this.setHoge({ name: 'that is Hoge' });
-    this.startRateInterval();
+    this.$store.dispatch('assetChart/fetchYearChartData');
+    console.log(this.$store.getters['assetChart/yearScale']);
+    // this.setHoge({ name: 'that is Hoge' });
+    // this.startRateInterval();
   },
 };
 </script>
